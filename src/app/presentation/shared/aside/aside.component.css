@@ -1,3 +1,7 @@
+aside {
+    width: 20rem;
+}
+
 .asideColor{
     background: linear-gradient(  #2682AA 100%, #0575A6 0%);
 }
@@ -5,7 +9,6 @@
 .text-font_name{
     font-family: 'Abhaya Libre', sans-serif;
     font-weight: normal;  
-  
 }
 
 .aside-li_hover:hover{

@@ -1,0 +1,8 @@
+.air-quality-card, .temperature-card, .humidity-card, .solar-radiation-card{
+    border: 2px solid black; 
+    border-radius: 2.5%; 
+  }
+
+  .grafic-card{
+    border: 2px solid black; 
+  }

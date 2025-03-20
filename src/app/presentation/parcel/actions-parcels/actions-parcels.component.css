@@ -1,0 +1,139 @@
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 37px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+
+.box-main-information-parcel {
+  width: 75rem;
+  height: 15rem;
+  background-color: #2c2d35;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 1.5rem;
+}
+
+.box-about-parcel {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 32rem;
+}
+
+.box-title-icon-parcel {
+  width: 300px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.box-title-information p {
+  color: white;
+  font-size: 2rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.box-actions-parcel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-filter {
+  width: 4.3rem;
+  height: 3.3rem;
+}
+
+.btn-add-parcel {
+  width: 13rem;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btn-filter,
+.btn-add-parcel {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 2rem;
+  border: solid #06bb93;
+  padding: 0.4rem;
+}
+
+.btn-filter:hover,
+.btn-add-parcel:hover {
+    background-color: #1E1E27;
+}
+
+.search-bar {
+  width: 96%;
+  background: #ffffff;
+  border: solid 1px #ccc;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 0 auto;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0px 0px 2px #ffffff;
+}
+
+.search-bar input {
+  background: none;
+  border: none;
+  outline: none;
+  flex: auto;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.search-bar .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+
+.search-bar .actions button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  color: #999;
+}
+
+.search-bar .actions button:hover {
+  color: #2979e2;
+}

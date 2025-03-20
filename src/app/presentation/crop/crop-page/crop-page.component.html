@@ -1,4 +1,4 @@
-<div class="bg-gray-700 h-full m-5">
+<div class="main-content-crops bg-gray-700 h-full m-5">
   <div class="button-pagination-div">
     <button
       class="button-pagination_button"
@@ -24,4 +24,18 @@
       <p class="text_nav-color">PÁRAMETROS AMBIENTALES</p>
     </button>
   </div>
+
+
+  <div  *ngIf="selectedButton === 'mi cultivo'">
+    <app-card-my-crop></app-card-my-crop>
+  </div>
+
+  <div  *ngIf="selectedButton === 'estadisticas'">
+    <app-card-statistics ></app-card-statistics>
+  </div>
+
+  <div  *ngIf="selectedButton === 'parametros'">
+    <app-card-parameters></app-card-parameters>
+  </div>
+
 </div>

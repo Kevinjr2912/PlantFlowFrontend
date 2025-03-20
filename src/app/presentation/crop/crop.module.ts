@@ -4,9 +4,11 @@ import { CropPageComponent } from './crop-page/crop-page.component';
 
 
 
+
 @NgModule({
   declarations: [
-    CropPageComponent
+    CropPageComponent,
+  
   ],
   imports: [
     CommonModule

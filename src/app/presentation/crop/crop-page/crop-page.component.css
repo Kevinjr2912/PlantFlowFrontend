@@ -1,0 +1,28 @@
+/*BOTONES CAMBIA PESTAÑA*/
+
+.button-pagination_button.active {
+    background-color: #2C2D35;
+    color: #06BB93;
+    border-bottom: 5px solid #06BB93;
+  }
+  
+  .button-pagination-div {
+    width: 100%;
+    color:white;
+  }
+
+  
+  
+  .button-pagination_button {
+    height: 3.875rem;
+    background-color: #2C2D35;
+    width: 33.3%;
+    border-bottom: 5px solid #1E1E27;
+  }
+  
+  .button-pagination_button:hover {
+    color: white;
+    border-bottom: 5px solid #ffffff;
+  }
+
+  

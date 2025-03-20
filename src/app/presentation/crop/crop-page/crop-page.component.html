@@ -1,1 +1,41 @@
-<p>crop-page works!</p>
+<div class="main-content-crops bg-gray-700 h-full m-5">
+  <div class="button-pagination-div">
+    <button
+      class="button-pagination_button"
+      [ngClass]="{ active: selectedButton === 'mi cultivo' }"
+      (click)="selectButton('mi cultivo')"
+    >
+      <p class="text_nav-color">MI CULTIVO</p>
+    </button>
+
+    <button
+      class="button-pagination_button"
+      [ngClass]="{ active: selectedButton === 'estadisticas' }"
+      (click)="selectButton('estadisticas')"
+    >
+      <p class="text_nav-color">ESTADÍSTICAS</p>
+    </button>
+
+    <button
+      class="button-pagination_button"
+      [ngClass]="{ active: selectedButton === 'parametros' }"
+      (click)="selectButton('parametros')"
+    >
+      <p class="text_nav-color">PÁRAMETROS AMBIENTALES</p>
+    </button>
+  </div>
+
+
+  <div  *ngIf="selectedButton === 'mi cultivo'">
+    <app-card-my-crop></app-card-my-crop>
+  </div>
+
+  <div  *ngIf="selectedButton === 'estadisticas'">
+    <app-card-statistics ></app-card-statistics>
+  </div>
+
+  <div  *ngIf="selectedButton === 'parametros'">
+    <app-card-parameters></app-card-parameters>
+  </div>
+
+</div>

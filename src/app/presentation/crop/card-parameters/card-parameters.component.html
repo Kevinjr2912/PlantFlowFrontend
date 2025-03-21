@@ -1,1 +1,43 @@
-<p>card-parameters works!</p>
+<div class="main-container">
+  <form class="container">
+    <div class="title-section">
+      <label for="cultivo">Nombre del Cultivo:</label>
+      <input type="text" id="cultivo" value="Papitas" />
+    </div>
+
+    <div class="grid-container">
+      <div class="card">
+        <h2>TEMPERATURA</h2>
+        <div class="">iconcito</div>
+        <label>Máximo:</label>
+        <input type="number" value="37" /> °C <br>
+        <label>Mínimo:</label> 
+        <input type="number" value="20" /> °C
+      </div>
+
+      <div class="card">
+        <h2>HUMEDAD</h2>
+        <div class="">iconcito</div>
+        <label>Máximo:</label>
+        <input type="number" value="80" /> % <br>
+        <label>Mínimo:</label>
+        <input type="number" value="40" /> %
+      </div>
+
+      <div class="card">
+        <h2>CALIDAD DEL AIRE</h2>
+        <div class="">iconcito</div>
+        <label>Máximo CO2:</label>
+        <input type="number" value="55" /> ppm
+      </div>
+
+      <div class="card">
+        <h2>RADIACIÓN SOLAR</h2>
+        <div class="">iconcito</div>
+        <p>Sin parámetro ambiental.</p>
+      </div>
+    </div>
+
+    <button type="submit" class="save-btn">GUARDAR 💾</button>
+  </form>
+</div>

@@ -3,7 +3,7 @@
 .button-pagination_button.active {
     background-color: #2C2D35;
     color: #06BB93;
-    border-bottom: 5px solid #06BB93;
+    border-bottom: 5px  #06BB93;
   }
   
   .button-pagination-div {

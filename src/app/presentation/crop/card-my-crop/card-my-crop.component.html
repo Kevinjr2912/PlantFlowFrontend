@@ -1,30 +1,69 @@
-<div class="mycrop-main mt-5 bg-amber-200 w-full flex items-start">
-    <div class="mycrop-card bg-green-400 w-1/2 flex flex-col items-center p-4">
-        <div class="mycrop-card-title text-center">
-            <h2>CULTIVO</h2>
-        </div>
-        <div class="mycrop-icon mt-4">
-            <img src="plant-crop1.svg" alt="cargando..." class="w-24 h-24">
-        </div>
-        <div class="mycrop-card-info mt-4 text-center">
-            <p>Tipo cultivo: Cultivo 1</p>
-            <p>Información : 01/01/2021</p>
-        </div>
+<div class="mycrop-main mt-10 mb-10 flex items-start box-container-main">
+  <div
+    class="mycrop-card w-1/2 flex flex-col items-center p-12 gap-14 box-card-crop"
+  >
+    <div class="mycrop-card-title box-title-crop">
+      <p>CULTIVO</p>
     </div>
+    <div class="mycrop-icon box-icon-crop">
+      <img src="assets/crops/CropIcon.svg" alt="cargando..." />
+    </div>
+    <div class="mycrop-card-info box-information-crop">
+      <div class="box-type-crop">
+        <div class="box-son-type-crop">
+          <p>Tipo cultivo:</p>
+        </div>
+        <div class="box-value-type-crop">Cultivo 1</div>
+      </div>
+      <div class="box-information">
+        <div class="box-son-information">
+          <p>Información:</p>
+        </div>
+        <div class="box-value-information">
+          Son principalmente semillas comestibles de plantas de la familia
+          Fabaceae
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <div class="device-card bg-yellow-400 w-1/2 flex flex-col items-center p-4">
-        <div class="device-card-title text-center">
-            <h2>DISPOSITIVO</h2>
-        </div>
-        <div class="device-icon mt-4">
-            <img src="device.svg" alt="cargando..." class="w-24 h-24">
-        </div>
-        <div class="device-card-info mt-4 text-center">
-            <p>Modelo: Dispositivo 1</p>
-            <p>Estado: Activo</p>
-            <p>Fecha de instalación: 01/01/2021</p>
-            <p>Fecha de mantenimiento: 01/01/2022</p>
-            <button class="btn-device mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">RETIRAR</button>
-        </div>
+  <div class="device-card w-1/2 flex flex-col items-center p-12 gap-14 h-full">
+    <div class="device-card-title text-center box-title-device">
+      <p>DISPOSITIVO</p>
     </div>
+    <div class="device-icon box-icon-device">
+      <img src="device.svg" alt="cargando..." />
+    </div>
+    <div class="device-card-info box-information-device">
+      <div class="box-model">
+        <div class="box-son-model">
+          <p>Modelo:</p>
+        </div>
+        <div class="box-value-model">Dispositivo 1</div>
+      </div>
+      <div class="box-estate-device">
+        <div class="box-son-state-device">
+          <p>Estado:</p>
+        </div>
+        <div class="box-value-state">Activo</div>
+      </div>
+      <div class="box-instalation">
+        <div class="box-son-instalation">
+          <p>Fecha de instalación:</p>
+        </div>
+        <div class="box-value-instalation">01/01/2021</div>
+      </div>
+      <div class="box-maintenance">
+        <div class="box-son-maintenance">
+          <p>Fecha de mantenimiento:</p>
+        </div>
+        <div class="box-value-maintenance">01/01/2022</div>
+      </div>
+      <button
+        class="btn-device mt-6 bg-blue-500 hover:bg-blue-700 font-bold p-6"
+      >
+        RETIRAR
+      </button>
+    </div>
+  </div>
 </div>

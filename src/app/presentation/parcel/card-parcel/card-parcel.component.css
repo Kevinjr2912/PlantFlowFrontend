@@ -1,3 +1,15 @@
+.container-parcel_div{
+  display: flex;
+  width: 80rem;
+  height: max-content;
+  background-color: #122dff;
+  margin: 3rem auto;
+  border-radius: 1.5rem;
+  display: grid;
+  /* para dividir en 3 las cards  */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
 .box-card-parcel {
   width: 25.5rem;
   height: 15rem;

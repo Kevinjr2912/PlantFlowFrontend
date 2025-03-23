@@ -1,8 +1,12 @@
-.air-quality-card, .temperature-card, .humidity-card, .solar-radiation-card{
-    border: 2px solid black; 
-    border-radius: 2.5%; 
-  }
+.stats-container {
+  width: 100%;
+  margin: auto;
+  background-color: #2c2d35;
+}
+.stat-card, .graph-card {
 
-  .grafic-card{
-    border: 2px solid black; 
-  }
+  text-align: center;
+  border: 1px solid #17171c;
+  box-shadow: 0px 0px 20px 1px #23242b;
+  height: 100%;
+}

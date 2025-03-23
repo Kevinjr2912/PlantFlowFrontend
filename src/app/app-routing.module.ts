@@ -7,6 +7,7 @@ const routes: Routes = [
 
   {path:"parcel",component:ParcelPageComponent},
   {path:"crop",component:CropPageComponent}, 
+  {path:'', redirectTo:'crop  ', pathMatch: 'full'}
 
 ];
 

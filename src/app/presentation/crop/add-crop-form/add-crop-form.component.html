@@ -1,0 +1,52 @@
+<div class="container-add-parcel">
+    <h2 class="text-white text-xl mb-2">Agregar Nueva Parcela</h2>
+    
+    <form (ngSubmit)="saveCrop()">
+      <label for="nombre">Nombre de la Parcela:</label>
+      <p *ngFor="let nameCrop of parcelName">{{nameCrop}}</p>
+  
+      <label for="tipo">Tipo de Cultivo:</label>
+      <p *ngFor="let type of cropTypes">{{ type }}</p>
+      
+      <label for="nombreC">Nombre del cultivo:</label>
+      <input type="text" id="nombreC" name="nombreC" required>
+
+      <label for="estado">Parametros del cultivo:</label>
+      
+      <div class="param-group">
+        <div class="param-left">
+          <label for="max-humidity">Max Humedad:</label>
+          <input type="number" id="max-humidity" name="maxHumidity" required>
+        </div>
+        <div class="param-right">
+          <label for="min-humidity">Min Humedad:</label>
+          <input type="number" id="min-humidity" name="minHumidity" required>
+        </div>
+      </div>
+  
+      <div class="param-group">
+        <div class="param-left">
+          <label for="max-temperature">Max Temperatura:</label>
+          <input type="number" id="max-temperature" name="maxTemperature" required>
+        </div>
+        <div class="param-right">
+          <label for="min-temperature">Min Temperatura:</label>
+          <input type="number" id="min-temperature" name="minTemperature" required>
+        </div>
+      </div>
+
+      <div class="param-group">
+        <div class="param-left">
+          <label for="max-air">Max Calidad del Aire:</label>
+          <input type="number" id="max-air" name="maxAirQuality" required>
+        </div>
+        <div class="param-right">
+          <label for="min-air">Min Calidad del Aire:</label>
+          <input type="number" id="min-air" name="minAirQuality" required>
+        </div>
+      </div>
+
+      <button type="submit">Guardar Cultivo</button>
+      <button type="button" (click)="cancel()">Cancelar</button>
+    </form>
+</div>

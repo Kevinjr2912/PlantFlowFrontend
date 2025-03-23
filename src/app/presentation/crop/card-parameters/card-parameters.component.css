@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1E1E27;
+    background: #2c2d35;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -30,7 +30,9 @@
 
 
 .title-section input {
-    background: #2C2D35;
+    background: #1e1e27;
+    border: 2px solid #17171c;
+    box-shadow: 0px 0px 20px 1px #23242b;
     border: none;
     color: white;
     padding: 5px;
@@ -49,21 +51,26 @@
 
 
 .card {
-    background: #1E1E27;
+    background: #2c2d35;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
 }
 
 
-.icon {
-    font-size: 40px;
-    margin-bottom: 10px;
+
+.iconcito {
+   
+    margin: auto;
+   
+  
 }
 
 
 .card input {
-    background: #2C2D35;
+    background: #1e1e27;
+    border: 2px solid #010102;
+    box-shadow: 0px 0px 20px 1px #23242b;
     border: none;
     color: white;
     padding: 5px;
@@ -78,7 +85,8 @@
     width: 100%;
     margin-top: 20px;
     padding: 10px;
-    background: #1E1E27;
+    border-radius: 50px;
+    background-color: #1e1e27;
     color: white;
     font-size: 18px;
     border: none;

@@ -1,3 +1,48 @@
 <aside class="asideColor text-white w-64 min-h-screen flex flex-col">
-    </aside>
-    
+    <div class="h-full px-3 overflow-y-auto pt-6 pb-6">
+        <ul class="space-y-5 font-medium">
+            <li>
+                <a (click)="toggleUserOptions()" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer">
+                    <img src="/assets/Aside/user.svg" alt="" class="w-10 h-10" />
+                    <span class="ms-3">Andre Julian</span>
+                    <img src="/assets/Aside/arrow_down.svg" alt="arrow" class="ml-auto" />
+                </a>
+                <ul *ngIf="showUserOptions" class="pl-6 space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <img src="/assets/Aside/settings.svg" alt="" class="w-10 h-10" />
+                            <span class="ms-3">Configuración</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <img src="/assets/Aside/out.svg" alt="" class="w-10 h-10" />
+                            <span class="ms-3">Cerrar sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a (click)="toggleParcels()" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer">
+                    <img src="/assets/Aside/parcel-mini.svg" alt="" class="w-10 h-10" />
+                    <span class="ms-3">Mis Parcelas</span>
+                    <img src="/assets/Aside/arrow_down.svg" alt="arrow" class="ml-auto" />
+                </a>
+                <ul *ngIf="showParcels" class="pl-6 space-y-2">
+                    <li *ngFor="let parcel of parcels">
+                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <img src="/assets/Aside/parcel-mini.svg" alt="" class="w-10 h-10" />
+                            <span class="ms-3">{{ parcel.name }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <img src="/assets/Aside/noti.svg" alt="" class="w-10 h-10" />
+                    <span class="flex-1 ms-3 whitespace-nowrap">Notificaciones</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>

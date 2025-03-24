@@ -1,0 +1,97 @@
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #2C2D35;
+    padding: 20px;
+}
+
+
+.container {
+    width: 100%;
+    background: #35363F;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c2d35;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+.title-section input {
+    background: #1e1e27;
+    border: 2px solid #17171c;
+    box-shadow: 0px 0px 20px 1px #23242b;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 25rem;
+}
+
+
+.grid-container {
+    display: grid;
+    /* para dividir en 2 las cards  */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+.card {
+    background: #2c2d35;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+
+.iconcito {
+   
+    margin: auto;
+   
+  
+}
+
+
+.card input {
+    background: #1e1e27;
+    border: 2px solid #010102;
+    box-shadow: 0px 0px 20px 1px #23242b;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    width: 60px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+
+.save-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #1e1e27;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+

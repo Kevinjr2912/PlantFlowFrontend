@@ -1,1 +1,51 @@
-<p>card-parameters works!</p>
+<div class="main-container">
+  <form class="container">
+    <div class="title-section">
+      <label class="text-lg font-bold" for="cultivo">Nombre del Cultivo:</label>
+      <input type="text" id="cultivo" value="Papitas" />
+    </div>
+
+    <div class="grid-container">
+      <div class="card">
+        <h2 class="text-lg font-bold">TEMPERATURA</h2>
+        <div class="div_icon mt-3 mb-3">
+          <img src="/assets/crops/temperature.svg" alt="Temperatura" class="iconcito w-20 h-20 mt-3">
+       </div>
+        <label class="text-lg font-semibold mt-3">Máximo:</label>
+        <input type="number" value="37" /> °C <br>
+        <label class="text-lg font-semibold mt-3">Mínimo:</label> 
+        <input type="number" value="20" /> °C
+      </div>
+
+      <div class="card">
+        <h2 class="text-lg font-bold">HUMEDAD</h2>
+        <div class="div_icon mt-3 mb-3">
+         <img src="/assets/crops/humedad.svg" alt="Humedad" class="iconcito w-20 h-20 mt-3">
+         </div>
+        <label class="text-lg font-semibold mt-3">Máximo:</label>
+        <input type="number" value="80" /> % <br>
+        <label class="text-lg font-semibold mt-3">Mínimo:</label>
+        <input type="number" value="40" /> %
+      </div>
+
+      <div class="card">
+        <h2 class="text-lg font-bold">CALIDAD DEL AIRE</h2>
+          <div class="div_icon mt-3 mb-3">
+        <img src="/assets/crops/aire.svg" alt="Calidad aire" class="iconcito w-20 h-20 mt-3">
+        </div>
+        <label class="text-lg font-semibold mt-3">Máximo CO2:</label>
+        <input type="number" value="55" /> ppm
+      </div>
+
+      <div class="card">
+        <h2 class="text-lg font-bold">RADIACIÓN SOLAR</h2>
+          <div class="div_icon mt-3 mb-3">
+        <img src="/assets/crops/radiacion.svg" alt="Radiacion solar" class="iconcito w-20 h-20 mt-3">
+        </div>
+        <p class="text-lg font-semibold mt-3">Sin parámetro ambiental.</p>
+      </div>
+    </div>
+
+    <button type="submit" class="save-btn text-lg font-semibold mt-3">GUARDAR 💾</button>
+  </form>
+</div>

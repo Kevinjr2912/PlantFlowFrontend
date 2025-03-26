@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-parcel',
@@ -15,7 +16,7 @@ export class FormParcelComponent {
   cropTypes = ['Legumbres', 'Frutales', 'Hortalizas'];
   growthStates = ['Germinación', 'Crecimiento', 'Cosecha'];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.formLost = this.formBuilder.group({
       parcelName: ['', Validators.required],
       cropType: ['', Validators.required],
@@ -37,6 +38,9 @@ export class FormParcelComponent {
   onBack() {
     if (this.currentStep > 1) this.currentStep--;
   }
+  onReset(){
+    this.router.navigate(['/parcel']);
+  }
 
   hasErrors(controlName: string, errorType: string) {
     return this.formLost.get(controlName)?.hasError(errorType) && this.formLost.get(controlName)?.touched;
@@ -44,5 +48,6 @@ export class FormParcelComponent {
 
   onSubmitFormLost() {
     console.log("Formulario enviado", this.formLost.value);
+    this.router.navigate(['/parcel']);
   }
 } 

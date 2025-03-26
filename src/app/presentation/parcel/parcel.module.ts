@@ -5,6 +5,8 @@ import { ActionsParcelsComponent } from './actions-parcels/actions-parcels.compo
 import { CardParcelComponent } from './card-parcel/card-parcel.component';
 import { AddParcelFormComponent } from './add-parcel-form/add-parcel-form.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { FormParcelComponent } from './form-parcel/form-parcel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,12 +15,15 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     ActionsParcelsComponent,
     CardParcelComponent,
     AddParcelFormComponent,
+    FormParcelComponent,
 
   ],
   imports: [
     CommonModule,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     ParcelPageComponent

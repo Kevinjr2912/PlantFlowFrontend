@@ -4,7 +4,6 @@ import { CropPageComponent } from './crop-page/crop-page.component';
 import { CardMyCropComponent } from './card-my-crop/card-my-crop.component';
 import { CardStatisticsComponent } from './card-statistics/card-statistics.component';
 import { CardParametersComponent } from './card-parameters/card-parameters.component';
-import { AddCropFormComponent } from './add-crop-form/add-crop-form.component';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -17,7 +16,6 @@ import { FormsModule } from '@angular/forms';
     CardMyCropComponent,
     CardStatisticsComponent,
     CardParametersComponent,
-    AddCropFormComponent,
   
   ],
   imports: [

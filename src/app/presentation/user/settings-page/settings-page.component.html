@@ -1,0 +1,57 @@
+<div class="container-add-parcel">
+    <form
+      [formGroup]="formUserSettings"
+      (ngSubmit)="onSubmitUserSettings()"
+      action="#"
+      class="bg-[#2c2d35] p-6 sm:p-8 rounded-lg shadow-xl"
+    >
+      <h1 class="text-center text-2xl mb-6 font-bold text-white sm:text-3xl">
+        Ajustes de Usuario
+      </h1>
+  
+      <!-- name -->
+      <div class="mb-4">
+        <label for="firstName">Nombre:</label>
+        <input type="text" id="firstName" formControlName="firstName" required />
+        <div *ngIf="hasErrors('firstName', 'required')" class="text-red-500 text-xs">
+          El nombre es obligatorio
+        </div>
+      </div>
+  
+      <!-- apellido -->
+      <div class="mb-4">
+        <label for="lastName">Apellido:</label>
+        <input type="text" id="lastName" formControlName="lastName" required />
+        <div *ngIf="hasErrors('lastName', 'required')" class="text-red-500 text-xs">
+          El apellido es obligatorio
+        </div>
+      </div>
+  
+      <!-- email -->
+      <div class="mb-4">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" formControlName="email" required />
+        <div *ngIf="hasErrors('email', 'required')" class="text-red-500 text-xs">
+          El correo es obligatorio
+        </div>
+      </div>
+  
+      <!-- contraseña -->
+      <div class="mb-6">
+        <label for="password">Nueva Contraseña:</label>
+        <input type="password" id="password" formControlName="password" required />
+        <div *ngIf="hasErrors('password', 'required')" class="text-red-500 text-xs">
+          La contraseña es obligatoria
+        </div>
+      </div>
+  
+      <!-- boton -->
+      <button
+        type="submit"
+        class="w-full rounded-lg px-5 py-3 text-sm font-medium text-white bg-green-500 hover:bg-green-600 shadow-md transition transform hover:-translate-y-1"
+      >
+        Guardar Cambios
+      </button>
+    </form>
+  </div>
+  

@@ -8,6 +8,8 @@ import { CropModule } from './presentation/crop/crop.module';
 import { AsideComponent } from "./presentation/shared/aside/aside.component";
 import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from "./presentation/shared/nav-bar/nav-bar.component";
+import { UserModule } from './presentation/user/user.module';
+import { AuthModule } from './presentation/auth/auth.module';
 
 
 @NgModule({
@@ -19,8 +21,10 @@ import { NavBarComponent } from "./presentation/shared/nav-bar/nav-bar.component
     AppRoutingModule,
     ParcelModule,
     CropModule,
+    UserModule,
     AsideComponent,
     FormsModule,
+    AuthModule,
     NavBarComponent
 ],
   providers: [],

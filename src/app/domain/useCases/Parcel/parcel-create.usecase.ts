@@ -4,7 +4,6 @@ import { ParcelRepository } from "../../repositories/parcel.repository";
 import { ParcelModel } from "../../models/parcel.model";
 
 
-
 export class CreateParcelUseCase implements UseCase<ParcelModel, ParcelModel> {
     constructor(private parcelRepository: ParcelRepository) { }
 

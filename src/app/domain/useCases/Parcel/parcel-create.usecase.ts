@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { UseCase } from "../../../base/use-case";
-import { ParcelRepository } from "../../repositories/parcel.repository";
-import { ParcelModel } from "../../models/parcel.model";
+import { ParcelRepository } from "../../repositories/Parcel/parcel.repository";
+import { ParcelModel } from "../../models/Parcel/parcel.model";
 
 
 export class CreateParcelUseCase implements UseCase<ParcelModel, ParcelModel> {

@@ -1,5 +1,5 @@
 import { Mapper } from '../../../../base/mapper';
-import { UserModel } from '../../../../domain/models/user.model';
+import { UserModel } from '../../../../domain/models/User/user.model';
 import { ResponseUser } from '../entities/User';
 
 export class UserImplementationRepositoryMapper extends Mapper<

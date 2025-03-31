@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { ParcelModel } from "../models/parcel.model";
+import { ParcelModel } from "../../models/Parcel/parcel.model";
 
 
 export abstract class ParcelRepository {

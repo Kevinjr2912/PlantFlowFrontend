@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ParcelMinInfoModel } from '../../../domain/models/Parcel/parcelMinInfo.model';
+import { ParcelImplementationRepository } from '../../../data/parcel-data/repositories/parcel-implementation.repository';
 
 @Component({
   selector: 'card-parcel',
@@ -7,33 +9,18 @@ import { Component } from '@angular/core';
 })
 export class CardParcelComponent {
 
+  parcelas: ParcelMinInfoModel[] = []; 
 
+  constructor(private parcelService: ParcelImplementationRepository) {}
 
-
-
-
-
-  parcelas = [
-    {
-      nombre: "PARCELA 1",
-      tipoCultivo: "LEGUMBRES",
-      estadoCultivo: "GERMINACIÓN",
-      dispositivo: "ROBOT298N",
-      imgParcela: "assets/Parcel.svg",
-      imgCultivo: "assets/TypeCrop.svg",
-      imgEstado: "assets/StateCrop.svg",
-      imgDispositivo: "assets/Device.svg",
-    },
-    {
-      nombre: "PARCELA 2",
-      tipoCultivo: "FRUTALES",
-      estadoCultivo: "CULTIVO",
-      dispositivo: "ROBOT400X",
-      imgParcela: "assets/Parcel.svg",
-      imgCultivo: "assets/TypeCrop.svg",
-      imgEstado: "assets/StateCrop.svg",
-      imgDispositivo: "assets/Device.svg",
-    }
-  ];
-
+  ngOnInit() {
+    const userId = 10; 
+    this.parcelService.getParcels(userId).subscribe({
+      next: (data) => {
+        console.log(" datos recibidos de la api:", data); 
+        this.parcelas = data; 
+      },
+      error: (err) => console.error(" error:", err)
+    });
+  }
 }

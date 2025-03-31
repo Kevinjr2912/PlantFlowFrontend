@@ -6,6 +6,7 @@ import { CardParcelComponent } from './card-parcel/card-parcel.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FormParcelComponent } from './form-parcel/form-parcel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ParcelDataModule } from '../../data/parcel-data/parcel-data.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterLink,
     RouterLinkActive,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ParcelDataModule
   ],
   exports: [
     ParcelPageComponent

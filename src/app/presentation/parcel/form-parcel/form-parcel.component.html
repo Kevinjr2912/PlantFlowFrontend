@@ -1,5 +1,5 @@
 <div class="container-add-parcel">
-  <form [formGroup]="formLost" (ngSubmit)="onSubmitFormLost()"
+  <form [formGroup]="formLost" (ngSubmit)="onSubmitFormParcel()"
       class="mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
 
       <!-- INICIO FORM PT1 -->
@@ -32,19 +32,6 @@
               </div>
           </div>
 
-          <!-- growthStates -->
-          <div>
-              <label for="growthStates" class="block mb-2 text-sm font-medium text-gray-900">
-                  Estado de Crecimiento del Cultivo:
-              </label>
-              <select id="growthStates" formControlName="growthStates"
-                  class="mb-2 bg-gray-50 border text-gray-900 text-sm rounded-lg block w-full p-2.5">
-                  <option *ngFor="let state of growthStates" [value]="state">{{ state }}</option>
-              </select>
-              <div *ngIf="hasErrors('growthStates', 'required')" class="text-red-500 text-xs mb-2">
-                  El campo estado de crecimiento es obligatorio
-              </div>
-          </div>
 
           <br>
 
@@ -57,6 +44,7 @@
               (click)="onReset()">
               Regresar a parcelas
           </button>
+
 
           <br>
           <div class="flex justify-center mt-4">

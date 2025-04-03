@@ -39,25 +39,25 @@
         <div class="box-son-model">
           <p>Modelo:</p>
         </div>
-        <div class="box-value-model">Dispositivo 1</div>
+        <div class="box-value-model">{{ device?.Id_model }}</div>
       </div>
       <div class="box-estate-device">
         <div class="box-son-state-device">
           <p>Estado:</p>
         </div>
-        <div class="box-value-state">Activo</div>
+        <div class="box-value-state">{{ device?.Id_status }}</div>
       </div>
       <div class="box-instalation">
         <div class="box-son-instalation">
           <p>Fecha de instalación:</p>
         </div>
-        <div class="box-value-instalation">01/01/2021</div>
+        <div class="box-value-instalation">{{ device?.Installation_date| date:'yyyy-MM-dd HH:mm:ss' }}</div>
       </div>
       <div class="box-maintenance">
         <div class="box-son-maintenance">
           <p>Fecha de mantenimiento:</p>
         </div>
-        <div class="box-value-maintenance">01/01/2022</div>
+        {{ device?.Maintenance_date ? (device?.Maintenance_date | date:'yyyy-MM-dd HH:mm:ss') : 'No disponible' }}
       </div>
       <button
         class="btn-device mt-6 bg-blue-500 hover:bg-blue-700 font-bold p-6"

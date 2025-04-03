@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CreateUserUseCase } from '../../../../domain/useCases/User/user-create.useCase';
 import { UserModel } from '../../../../domain/models/User/user.model';
 
@@ -19,7 +20,7 @@ export class RegisterComponent {
     password: '',
   };
 
-  constructor(private fb: FormBuilder, private createUC: CreateUserUseCase) {
+  constructor(private fb: FormBuilder, private createUC: CreateUserUseCase, private router: Router) {
     this.registerForm = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -46,6 +47,7 @@ export class RegisterComponent {
       this.createUC.execute(this.user).subscribe(
         (response) => {
           console.log('user creado', response);
+          this.router.navigate(['/login']);
         },
         (err) => {
           console.log('Error al crear el usuario:', err);

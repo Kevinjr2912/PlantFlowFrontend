@@ -1,40 +1,30 @@
 <div class="container-parcel_div">
-  <div class="box-card-parcel"*ngFor="let p of parcelas">
+  <div  class="box-card-parcel" *ngFor="let p of parcelas" (click)="verDetalleParcela(p.id)">
     <div class="box-name-icon-parcel">
       <div class="box-title-parcela">
-        <p>{{ p.nombre }}</p>
+        <p>{{ p.name }}</p> 
       </div>
       <div class="box-img-parcel">
-        <img [src]="p.imgParcela" alt="Parcela" />
+        <img src="assets/Parcel.svg" alt="Parcela" />
       </div>
     </div>
     <div class="box-characteristics">
       <div class="box-type-crop">
         <div class="box-img-type-crop">
-            <img [src]="p.imgCultivo" alt="Tipo de Cultivo" />
+          <img src="assets/TypeCrop.svg" alt="Tipo de Cultivo" />
         </div>
         <div class="box-title-type-crop">
-            <p>{{ p.tipoCultivo }}</p>
-        </div>
-      </div>
-      <div class="box-state-crop">
-        <div class="box-img-state-crop">
-            <img [src]="p.imgEstado" alt="Estado del Cultivo" />
-        </div>
-        <div class="box-title-state-crop">
-            <p>{{ p.estadoCultivo }}</p>
+          <p>{{ p.type_crop }}</p> 
         </div>
       </div>
       <div class="box-device">
         <div class="box-img-device">
-            <img [src]="p.imgDispositivo" alt="Dispositivo" />
+          <img src="assets/Device.svg" alt="Dispositivo" />
         </div>
         <div class="box-title-device">
-            <p>{{ p.dispositivo }}</p>
+          <p>{{ p.device_model }}</p> 
         </div>
       </div>
     </div>
   </div>
 </div>
-
-

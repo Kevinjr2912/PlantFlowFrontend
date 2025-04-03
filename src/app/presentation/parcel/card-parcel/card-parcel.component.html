@@ -1,5 +1,5 @@
 <div class="container-parcel_div">
-  <div class="box-card-parcel" *ngFor="let p of parcelas">
+  <div  class="box-card-parcel" *ngFor="let p of parcelas" (click)="verDetalleParcela(p.id)">
     <div class="box-name-icon-parcel">
       <div class="box-title-parcela">
         <p>{{ p.name }}</p> 

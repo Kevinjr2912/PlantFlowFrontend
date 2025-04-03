@@ -27,7 +27,7 @@
 
 
   <div  *ngIf="selectedButton === 'mi cultivo'">
-    <app-card-my-crop></app-card-my-crop>
+    <app-card-my-crop [device]="deviceData"></app-card-my-crop>
   </div>
 
   <div  *ngIf="selectedButton === 'estadisticas'">

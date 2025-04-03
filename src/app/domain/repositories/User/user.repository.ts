@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { UserModel } from "../models/user.model";
+import { UserModel } from "../../models/User/user.model";
 
 
 export abstract class UserRepository {

@@ -11,7 +11,7 @@ const routes: Routes = [
 
   {path:"parcel",component:ParcelPageComponent},
   {path:"parcel/add",component:FormParcelComponent},
-  {path:"crop",component:CropPageComponent},
+  {path:"crop/:id",component:CropPageComponent},
   {path:"settings",component:SettingsPageComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},

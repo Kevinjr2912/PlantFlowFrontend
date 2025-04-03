@@ -14,13 +14,12 @@ export class FormParcelComponent {
   currentStep = 1;
   formLost: FormGroup;
   cropTypes = ['Legumbres', 'Frutales', 'Hortalizas'];
-  growthStates = ['Germinación', 'Crecimiento', 'Cosecha'];
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.formLost = this.formBuilder.group({
       parcelName: ['', Validators.required],
       cropType: ['', Validators.required],
-      growthStates: ['', Validators.required],
+
       cropName: ['', Validators.required],
       maxHumidity: ['', Validators.required],
       minHumidity: ['', Validators.required],
@@ -46,7 +45,7 @@ export class FormParcelComponent {
     return this.formLost.get(controlName)?.hasError(errorType) && this.formLost.get(controlName)?.touched;
   }
 
-  onSubmitFormLost() {
+  onSubmitFormParcel() {
     console.log("Formulario enviado", this.formLost.value);
     this.router.navigate(['/parcel']);
   }

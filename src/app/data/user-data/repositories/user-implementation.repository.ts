@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-import { UserRepository } from '../../../domain/repositories/user.repository';
+import { UserRepository } from "../../../domain/repositories/User/user.repository";
 import { HttpClient } from "@angular/common/http";
 import { UserImplementationRepositoryMapper } from "./mappers/user-repository-mapper";
-import { UserModel } from "../../../domain/models/user.model";
+import { UserModel } from "../../../domain/models/User/user.model";
 import { map, Observable } from "rxjs";
 import { ResponseUser } from "./entities/User";
 
@@ -21,7 +21,8 @@ export class UserImplementationRepository extends UserRepository {
     private url = "http://localhost:8080/users"
     
     createUser(user : UserModel): Observable<UserModel> {
-        return this.http.post<ResponseUser> (this.url, user).pipe(map(this.userMapper.mapFrom))
+        return this.http.post<ResponseUser> (this.url, user)
+        .pipe(map(this.userMapper.mapFrom))
     }   
 
 }

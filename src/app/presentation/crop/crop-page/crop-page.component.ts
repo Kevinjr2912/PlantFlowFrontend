@@ -6,6 +6,8 @@ import { ParcelImplementationRepository } from '../../../data/parcel-data/reposi
 import { CropImplementationRepository } from '../../../data/crop-data/repositories/crop-implementation.repository';
 import { CropTypeImplementationRepository } from '../../../data/crop-data/repositories/cropType-implmentation.repository';
 import { ParameterImplementationRepository } from '../../../data/parameters-data/repositories/parameters-implementation-repository';
+import { MeasurementImplementationRepository } from '../../../data/measurement/repositories/measurement-implementation.repository';
+import { MeasurementModel } from '../../../domain/models/Measurement/Measurement';
 
 @Component({
   selector: 'app-crop-page',
@@ -22,6 +24,8 @@ export class CropPageComponent implements OnInit{
   // cropTypeData: { id: number; crop_type_name: string; description: string } | null = null;
   deviceData: DeviceModel | null = null;
   parameters: any = [];
+  measurements: MeasurementModel[] = [];
+
   constructor(
     private route: ActivatedRoute,
     private deviceService: DeviceImplementationRepository,
@@ -29,6 +33,7 @@ export class CropPageComponent implements OnInit{
     private cropService: CropImplementationRepository,
     private getCropTypeByIdUseCase: CropTypeImplementationRepository,
     private parameterService: ParameterImplementationRepository,
+    private measurementService: MeasurementImplementationRepository,
     
   ) {}
 
@@ -47,6 +52,9 @@ export class CropPageComponent implements OnInit{
 
       //obtiene crop Type
       this.getCropType(this.idCrop);
+
+      this.cargarMediciones();
+
 
       
       
@@ -158,15 +166,39 @@ export class CropPageComponent implements OnInit{
   }
   
 
-  cargarEstadisticas(): void {
-    
-    console.log('Cargando estadísticas...');
+  cargarMediciones(): void {
+    const deviceId = localStorage.getItem('deviceId');
+  
+    if (!deviceId) {
+      console.error('No se encontró el ID del dispositivo en localStorage');
+      return;
+    }
+  
+    this.measurementService.getMeasurements(deviceId).subscribe({
+      next: (response: any) => {
+        const rawData = response.data;
+        this.measurements = rawData.map((item: any) => {
+          const attr = item.attributes;
+          return {
+            id: item.id,
+            id_device: attr.id_device,
+            temp: attr.temp,
+            humedity: attr.humedity,
+            air: attr.air,
+            sun: attr.sun,
+            date_and_hour: attr.date_and_hour
+          };
+        });
+        console.log('Mediciones cargadas:', this.measurements);
+      },
+      error: (err) => {
+        console.error('Error al cargar mediciones:', err);
+      }
+    });
   }
 
-  cargarParametrosAmbientales(): void {
-    
-    console.log('Cargando parámetros ambientales...');
-  }
+  
+
 }       
 
 

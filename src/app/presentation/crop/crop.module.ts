@@ -12,6 +12,7 @@ import { CropDataModule } from '../../data/crop-data/crop-data.module';
 import { ChartModule } from 'primeng/chart';
 
 import { ParametersDataModule } from '../../data/parameters-data/parameters-data.module';
+import { MeasurementModule } from '../../data/measurement/measurement.module';
 
 
 
@@ -32,6 +33,7 @@ import { ParametersDataModule } from '../../data/parameters-data/parameters-data
     CropDataModule,
     ChartModule,
     ParametersDataModule,
+    MeasurementModule
   ]
 })
 export class CropModule { }

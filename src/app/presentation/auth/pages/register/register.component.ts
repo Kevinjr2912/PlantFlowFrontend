@@ -14,6 +14,7 @@ export class RegisterComponent {
 
   user: UserModel = {
     id: 0,
+    id_rol: 2,
     firstName: '',
     lastName: '',
     email: '',

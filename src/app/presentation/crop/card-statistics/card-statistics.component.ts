@@ -1,8 +1,8 @@
-//charl
+
 import { Component, OnInit } from '@angular/core';
 import { MeasurementModel } from '../../../domain/models/Measurement/Measurement';
-//charl
-import { Component, Input } from '@angular/core';
+
+import { Input } from '@angular/core';
 //charl
 
 @Component({

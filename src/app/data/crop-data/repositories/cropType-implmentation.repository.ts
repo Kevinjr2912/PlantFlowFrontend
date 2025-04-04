@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { CropTypeRepositoryMapper } from "./mappers/cropType-getAll-repository-mapper";
 
-@Injectable({
+@Injectable({ 
   providedIn: "root",
 })
 export class CropTypeImplementationRepository extends CropTypeRepository {

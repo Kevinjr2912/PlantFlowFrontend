@@ -27,7 +27,7 @@
 
 
   <div  *ngIf="selectedButton === 'mi cultivo'">
-    <app-card-my-crop [device]="deviceData"></app-card-my-crop>
+    <app-card-my-crop [device]="deviceData" [cropType]="cropType"></app-card-my-crop>
   </div>
 
   <div  *ngIf="selectedButton === 'estadisticas'">
@@ -35,7 +35,7 @@
   </div>
 
   <div  *ngIf="selectedButton === 'parametros'">
-    <app-card-parameters></app-card-parameters>
+    <app-card-parameters  [parameters]="parameters"   (saveParameters)="guardarParametrosActualizados($event)" ></app-card-parameters>
   </div>
 
 </div>

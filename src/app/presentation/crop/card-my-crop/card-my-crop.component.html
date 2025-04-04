@@ -13,16 +13,17 @@
         <div class="box-son-type-crop">
           <p>Tipo cultivo:</p>
         </div>
-        <div class="box-value-type-crop">Cultivo 1</div>
+        <div class="box-value-type-crop">
+          {{ cropType?.crop_type_name || 'Cargando...' }}
+        </div>
       </div>
       <div class="box-information">
         <div class="box-son-information">
           <p>Información:</p>
         </div>
         <div class="box-value-information">
-          Son principalmente semillas comestibles de plantas de la familia
-          Fabaceae
-        </div>
+          {{ cropType?.description || 'Sin descripción' }}
+        </div> 
       </div>
     </div>
   </div>

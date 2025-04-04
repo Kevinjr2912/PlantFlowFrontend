@@ -19,5 +19,6 @@ export class CardMyCropComponent implements OnInit{
   
 
   @Input() device!: DeviceModel | null;
+  @Input() cropType!: any; 
   
 }

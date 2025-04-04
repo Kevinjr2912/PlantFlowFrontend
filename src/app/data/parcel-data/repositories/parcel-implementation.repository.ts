@@ -4,9 +4,10 @@ import { HttpClient } from "@angular/common/http";
 import { ParcelImplementationRepositoryMapper,  } from "./mappers/parcel-repository-mapper";
 import { ParcelModel } from "../../../domain/models/Parcel/parcel.model";
 import { map, Observable } from "rxjs";
-import { ResponseParcels } from "./entities/Parcel";
+import { ResponseOneParcel, ResponseParcels } from "./entities/Parcel";
 import { ParcelMinInfo } from "../../../domain/models/Parcel/parcelMinInfo.model";
 import { ParcelGetAllRepositoryMapper } from "./mappers/parcel-getAll-repository-mapper";
+import { ParcelGetByIdRepositoryMapper } from "./mappers/parcel-getById-repository-mapper";
 
 @Injectable({
   providedIn: "root",
@@ -19,7 +20,10 @@ export class ParcelImplementationRepository extends ParcelRepository {
   //para register
   parcelMapper = new ParcelImplementationRepositoryMapper();
   parcelGetAllMapper = new ParcelGetAllRepositoryMapper();
+  parcelGetByIdMapper = new ParcelGetByIdRepositoryMapper();
   
+  //para get parcels
+//   parcelMapperGetParcels = new GetParcelsImplmentationRepossitoryMapper();
 
 
   private url = "http://localhost:8080/parcels";
@@ -43,4 +47,13 @@ export class ParcelImplementationRepository extends ParcelRepository {
       })
     );
 }
+
+getParcelByID(id: number): Observable<ParcelModel> {
+  return this.http
+    .get<ResponseOneParcel>(`${this.url}/${id}`) 
+    .pipe(
+      map(response => this.parcelGetByIdMapper.mapFrom(response)) 
+    );
+}
+
 }

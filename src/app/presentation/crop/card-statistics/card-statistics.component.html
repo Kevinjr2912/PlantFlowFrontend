@@ -40,6 +40,21 @@
     
     <div class="graph-card p-6 rounded-lg flex flex-col items-center">
         <h2 class="text-lg font-bold">GRÁFICA TEMPERATURA</h2>
-        <img src="graph-icon.svg" alt="Gráfica" class="w-full mt-3">
+        <p-chart type="line" [data]="chartDataTemp" [options]="chartOptionsTemp"></p-chart>
+    </div>
+
+    <div class="graph-card p-6 rounded-lg flex flex-col items-center">
+        <h2 class="text-lg font-bold">GRÁFICA HUMEDAD</h2>
+        <p-chart type="line" [data]="chartDataHum" [options]="chartOptionsHum"></p-chart>
+    </div>
+
+    <div class="graph-card p-6 rounded-lg flex flex-col items-center">
+        <h2 class="text-lg font-bold">GRÁFICA CALIDAD DEL AIRE</h2>
+        <p-chart type="line" [data]="chartDataAir" [options]="chartOptionsAir"></p-chart>
+    </div>
+
+    <div class="graph-card p-6 rounded-lg flex flex-col items-center">
+        <h2 class="text-lg font-bold">GRÁFICA LUZ SOLAR</h2>
+        <p-chart type="line" [data]="chartDataSun" [options]="chartOptionsSun"></p-chart>
     </div>
 </div>

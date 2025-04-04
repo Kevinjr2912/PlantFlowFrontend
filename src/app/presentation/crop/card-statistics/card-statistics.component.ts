@@ -1,5 +1,9 @@
+//charl
 import { Component, OnInit } from '@angular/core';
 import { MeasurementModel } from '../../../domain/models/Measurement/Measurement';
+//charl
+import { Component, Input } from '@angular/core';
+//charl
 
 @Component({
   selector: 'app-card-statistics',
@@ -46,6 +50,7 @@ export class CardStatisticsComponent implements OnInit {
     }*/
   ];
 
+//charl
   chartDataTemp: any;
   chartOptionsTemp: any;
 
@@ -198,4 +203,8 @@ export class CardStatisticsComponent implements OnInit {
       }
     };
   }
+
+
+
+
 }

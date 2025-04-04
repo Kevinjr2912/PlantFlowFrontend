@@ -5,6 +5,7 @@ import { ParcelRepository } from '../../domain/repositories/Parcel/parcel.reposi
 import { ParcelImplementationRepository } from './repositories/parcel-implementation.repository';
 import { getParcelUseCase } from '../../domain/useCases/Parcel/get-parcel.useCase';
 import { RegisterPacelUseCase } from '../../domain/useCases/Parcel/register-parcel.useCase';
+import { GetParcelByIdUseCase } from '../../domain/useCases/Parcel/getById-parcel.useCase';
 
 
 const registerParcelCaseFactory = (parcelRepo : ParcelRepository) => new RegisterPacelUseCase(parcelRepo)
@@ -23,12 +24,19 @@ export const getParcelUseCaseProvider = {
   deps: [ParcelRepository]
 }
 
+const getParcelByIdCaseFactory = (parcelRepo : ParcelRepository) => new GetParcelByIdUseCase(parcelRepo)
+
+export const getParcelByIdUseCaseProvider={
+  provide: GetParcelByIdUseCase,
+  useFactory : getParcelByIdCaseFactory,
+  deps: [ParcelRepository]
+}
 
 
 
 @NgModule({
   providers: [
-      registerParcelUseCaseProvider, getParcelUseCaseProvider,
+      registerParcelUseCaseProvider, getParcelUseCaseProvider, getParcelByIdUseCaseProvider,
       { provide: ParcelRepository, useClass: ParcelImplementationRepository}
     ],
   declarations: [],

@@ -1,9 +1,5 @@
 <div class="main-container">
   <form class="container">
-    <div class="title-section">
-      <label class="text-lg font-bold" for="cultivo">Nombre del Cultivo:</label>
-      <input type="text" id="cultivo" value="Papitas" />
-    </div>
 
     <div class="grid-container">
       <div class="card">
@@ -12,9 +8,9 @@
           <img src="/assets/crops/temperature.svg" alt="Temperatura" class="iconcito w-20 h-20 mt-3">
        </div>
         <label class="text-lg font-semibold mt-3">Máximo:</label>
-        <input type="number" value="37" /> °C <br>
+        <input type="number" [(ngModel)]="parameters.temp_max" name="maxTemperature" /> °C <br>
         <label class="text-lg font-semibold mt-3">Mínimo:</label> 
-        <input type="number" value="20" /> °C
+        <input type="number" [(ngModel)]="parameters.temp_min" name="minTemperature" /> °C
       </div>
 
       <div class="card">
@@ -23,9 +19,9 @@
          <img src="/assets/crops/humedad.svg" alt="Humedad" class="iconcito w-20 h-20 mt-3">
          </div>
         <label class="text-lg font-semibold mt-3">Máximo:</label>
-        <input type="number" value="80" /> % <br>
+        <input type="number" [(ngModel)]="parameters.humidity_max" name="maxHumidity" /> % <br>
         <label class="text-lg font-semibold mt-3">Mínimo:</label>
-        <input type="number" value="40" /> %
+        <input type="number" [(ngModel)]="parameters.humidity_min" name="minHumidity" /> %
       </div>
 
       <div class="card">
@@ -34,7 +30,7 @@
         <img src="/assets/crops/aire.svg" alt="Calidad aire" class="iconcito w-20 h-20 mt-3">
         </div>
         <label class="text-lg font-semibold mt-3">Máximo CO2:</label>
-        <input type="number" value="55" /> ppm
+        <input type="number" [(ngModel)]="parameters.max_air_con" name="maxCO2" /> ppm
       </div>
 
       <div class="card">
@@ -46,6 +42,6 @@
       </div>
     </div>
 
-    <button type="submit" class="save-btn text-lg font-semibold mt-3">GUARDAR 💾</button>
+    <button type="submit" (click)="updateParameters()" class="save-btn text-lg font-semibold mt-3">GUARDAR 💾</button>
   </form>
 </div>

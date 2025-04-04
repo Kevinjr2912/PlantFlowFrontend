@@ -2,8 +2,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MeasurementModel } from '../../../domain/models/Measurement/Measurement';
 //charl
-import { Component, Input } from '@angular/core';
-//charl
 
 @Component({
   selector: 'app-card-statistics',

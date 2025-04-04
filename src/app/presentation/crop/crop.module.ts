@@ -31,7 +31,7 @@ import { ParametersDataModule } from '../../data/parameters-data/parameters-data
     DeviceDataModule,
     CropDataModule,
 //charl
-    ChartModule
+    ChartModule,
 //me
     ParametersDataModule
 

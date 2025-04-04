@@ -5,6 +5,7 @@ import { DeviceImplementationRepository } from '../../../data/device-data/reposi
 import { ParcelImplementationRepository } from '../../../data/parcel-data/repositories/parcel-implementation.repository';
 import { CropImplementationRepository } from '../../../data/crop-data/repositories/crop-implementation.repository';
 import { CropTypeImplementationRepository } from '../../../data/crop-data/repositories/cropType-implmentation.repository';
+import { ParameterImplementationRepository } from '../../../data/parameters-data/repositories/parameters-implementation-repository';
 
 @Component({
   selector: 'app-crop-page',
@@ -17,16 +18,17 @@ export class CropPageComponent implements OnInit{
 
   parcelaId!: number;
   idCrop!: number;
-  cropType: any = null; 
+  cropType: any = null;                                
   // cropTypeData: { id: number; crop_type_name: string; description: string } | null = null;
   deviceData: DeviceModel | null = null;
-  
+  parameters: any = [];
   constructor(
     private route: ActivatedRoute,
     private deviceService: DeviceImplementationRepository,
     private parcelService: ParcelImplementationRepository,
     private cropService: CropImplementationRepository,
-    private getCropTypeByIdUseCase: CropTypeImplementationRepository
+    private getCropTypeByIdUseCase: CropTypeImplementationRepository,
+    private parameterService: ParameterImplementationRepository,
     
   ) {}
 
@@ -45,6 +47,8 @@ export class CropPageComponent implements OnInit{
 
       //obtiene crop Type
       this.getCropType(this.idCrop);
+
+      
       
       }
     });
@@ -85,6 +89,7 @@ export class CropPageComponent implements OnInit{
 
          //obtien el cultivo por el id
         this.getCrop(this.idCrop);
+        
       },
       error: (err) => console.error("Error al obtener parcela:", err),
     });   
@@ -96,8 +101,10 @@ export class CropPageComponent implements OnInit{
       next: (crop) => {
         console.log('Cultivo cargado:', crop);
   
-        // Ahora obtenemos el tipo de cultivo con el ID obtenido
+        //  tipo de cultivo con el id 
         this.getCropType(crop.id_crop_type);
+        // tipo de paramtro id 
+        this.getParameter(crop.id_cultivation_parameter); 
       },
       error: (err) => console.error('Error al cargar el cultivo:', err),
     });
@@ -115,7 +122,25 @@ export class CropPageComponent implements OnInit{
   }
 
 
+  getParameter(idParam: number): void {
+    this.parameterService.GetParametersById(idParam).subscribe({
+      next: (parameterResponse) => {
+        this.parameters = { ...parameterResponse }; 
+        console.log("Parámetro cargado:", this.parameters);
+      },
+      error: (err) => console.error("Error al obtener parámetros:", err),
+    });
+  }
+  
 
+  // updateParameters(): void {
+  //   this.parameterService.updateParameter(this.parameter).subscribe({
+  //     next: (updatedParameter) => {
+  //       console.log('Parámetros actualizados:', updatedParameter);
+  //     },
+  //     error: (err) => console.error('Error al actualizar parámetros:', err),
+  //   });
+  // }
   
 
   cargarEstadisticas(): void {

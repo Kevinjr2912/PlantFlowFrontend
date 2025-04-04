@@ -72,24 +72,35 @@ export class CropPageComponent implements OnInit{
 
 
   cargarDatosDevice1(): void {
-    this.deviceService.getDeviceByID('DEV123').subscribe({
-      next: (data) => {
-        this.deviceData = data;
-        console.log('Dispositivo cargado:', this.deviceData);
-      },
-      error: (err) => console.error('Error al cargar el dispositivo:', err),
-    });
+    // get id dispostivo 
+    const deviceId = localStorage.getItem('deviceId');
+  
+    if (deviceId) {
+      this.deviceService.getDeviceByID(deviceId).subscribe({
+        next: (data) => {
+          this.deviceData = data;
+          console.log('Dispositivo cargado:', this.deviceData);
+        },
+        error: (err) => console.error('Error al cargar el dispositivo:', err),
+      });
+    } else {
+      console.error('No se encontró el ID del dispositivo en localStorage');
+    }
   }
 
-  cargarDatosCrop2(): void{
+  cargarDatosCrop2(): void {
     this.parcelService.getParcelByID(this.parcelaId).subscribe({
       next: (parcelResponse) => {
-        this.idCrop = parcelResponse.Id_crop
+        this.idCrop = parcelResponse.Id_crop;
         console.log("ID de Cultivo obtenido:", this.idCrop);
-
-         //obtien el cultivo por el id
+  
+        // id dispositivo en el local
+        const idDispositivo = parcelResponse.Id_device;
+        localStorage.setItem('deviceId', idDispositivo);
+        console.log("ID de Dispositivo guardado en localStorage:", idDispositivo);
+  
+        // cultivo por el id
         this.getCrop(this.idCrop);
-        
       },
       error: (err) => console.error("Error al obtener parcela:", err),
     });   

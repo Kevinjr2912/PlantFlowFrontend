@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from "./presentation/shared/nav-bar/nav-bar.component";
 import { UserModule } from './presentation/user/user.module';
 import { AuthModule } from './presentation/auth/auth.module';
+import { NgxEchartsModule } from 'ngx-echarts';
+
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { AuthModule } from './presentation/auth/auth.module';
     AsideComponent,
     FormsModule,
     AuthModule,
-    NavBarComponent
+    NavBarComponent,
+    NgxEchartsModule.forRoot({ echarts: () => import('echarts') }),
 ],
   providers: [],
   bootstrap: [AppComponent]

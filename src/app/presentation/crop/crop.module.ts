@@ -8,7 +8,11 @@ import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DeviceDataModule } from '../../data/device-data/device-data.module';
 import { CropDataModule } from '../../data/crop-data/crop-data.module';
+//charl
+import { ChartModule } from 'primeng/chart';
+//me
 import { ParametersDataModule } from '../../data/parameters-data/parameters-data.module';
+
 
 
 
@@ -19,7 +23,6 @@ import { ParametersDataModule } from '../../data/parameters-data/parameters-data
     CardMyCropComponent,
     CardStatisticsComponent,
     CardParametersComponent,
-  
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,11 @@ import { ParametersDataModule } from '../../data/parameters-data/parameters-data
     FormsModule,
     DeviceDataModule,
     CropDataModule,
+//charl
+    ChartModule
+//me
     ParametersDataModule
+
   ]
 })
 export class CropModule { }

@@ -27,9 +27,13 @@ export class ParameterImplementationRepository extends ParameterRepository {
       .pipe(map(response => this.parameterGetByIdMapper.mapFrom(response)));
   }
 
-  SetParameters(parameter: CultivationParametersModel): Observable<CultivationParametersModel> {
-    return this.http
-      .post<ResponseCultivationParameter>(this.url, parameter)
-      .pipe(map(response => this.parameterSetMapper.mapFrom(response)));
+  SetParameters(params: CultivationParametersModel): Observable<CultivationParametersModel> {
+    return this.http.put<CultivationParametersModel>(`http://localhost:8080/params/${params.id}`, {
+      humidity_min: params.humidity_min,
+      humidity_max: params.humidity_max,
+      temp_min: params.temp_min,
+      temp_max: params.temp_max,
+      max_air_con: params.max_air_con,
+    });
   }
 }

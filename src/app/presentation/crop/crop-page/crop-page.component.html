@@ -35,7 +35,7 @@
   </div>
 
   <div  *ngIf="selectedButton === 'parametros'">
-    <app-card-parameters  [parameters]="parameters" ></app-card-parameters>
+    <app-card-parameters  [parameters]="parameters"   (saveParameters)="guardarParametrosActualizados($event)" ></app-card-parameters>
   </div>
 
 </div>

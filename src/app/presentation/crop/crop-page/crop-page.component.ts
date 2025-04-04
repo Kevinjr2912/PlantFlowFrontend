@@ -132,15 +132,19 @@ export class CropPageComponent implements OnInit{
     });
   }
   
-
-  // updateParameters(): void {
-  //   this.parameterService.updateParameter(this.parameter).subscribe({
-  //     next: (updatedParameter) => {
-  //       console.log('Parámetros actualizados:', updatedParameter);
-  //     },
-  //     error: (err) => console.error('Error al actualizar parámetros:', err),
-  //   });
-  // }
+  guardarParametrosActualizados(parametrosActualizados: any) {
+    console.log("Enviando estos parámetros al backend:", parametrosActualizados);
+  
+    this.parameterService.SetParameters(parametrosActualizados).subscribe({
+      next: () => {
+        console.log("Parámetros actualizados con éxito");
+        // puedes mostrar algún mensaje al usuario aquí
+      },
+      error: (error) => {
+        console.error("Error al actualizar los parámetros:", error);
+      }
+    });
+  }
   
 
   cargarEstadisticas(): void {

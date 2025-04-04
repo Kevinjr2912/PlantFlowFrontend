@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-card-parameters',
@@ -7,6 +7,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class CardParametersComponent implements OnChanges {
   @Input() parameters: any;
+  @Output() saveParameters = new EventEmitter<any>();
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['parameters']) {
@@ -14,7 +15,8 @@ export class CardParametersComponent implements OnChanges {
     }
   }
 
+
   updateParameters() {
-   console.log("Parámetros actualizados:", this.parameters);
+    this.saveParameters.emit(this.parameters);
   }
 }

@@ -1,7 +1,7 @@
 interface ParcelAttributes  {
     id_user  : number;
     id_crop  : number;
-    id_device: number;
+    id_device: string;
     name?: string; 
     type_crop?: string; 
     device_model?: string; 
@@ -11,6 +11,7 @@ interface ParcelAttributes  {
 interface ParcelLinks  {
     self : string;
 }
+
 
 interface Parcel {
     type: string;
@@ -29,3 +30,20 @@ export interface ResponseParcels {
     data: Parcel[];
     status: number;
 }
+
+
+export interface ResponseOneParcel {
+    data: {
+      type: string;
+      id: string;
+      attributes: {
+        id_user: number;
+        id_crop: number;
+        id_device: string;
+      };
+      links: {
+        self: string;
+      };
+    };
+    status: number;
+  }

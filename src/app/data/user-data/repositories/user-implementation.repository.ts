@@ -5,6 +5,7 @@ import { UserImplementationRepositoryMapper } from "./mappers/user-repository-ma
 import { UserModel } from "../../../domain/models/User/user.model";
 import { map, Observable } from "rxjs";
 import { ResponseUser } from "./entities/User";
+import { AccessCredentials } from "../../../domain/models/User/access-credentials.model";
 
 @Injectable({
     providedIn: 'root',
@@ -21,9 +22,15 @@ export class UserImplementationRepository extends UserRepository {
     private url = "http://localhost:8080/users"
     
     createUser(user : UserModel): Observable<UserModel> {
-        return this.http.post<ResponseUser> (this.url, user)
+        return this.http.post<ResponseUser> (`${this.url}/`, user)
         .pipe(map(this.userMapper.mapFrom))
-    }   
+    }
+
+    override login(accessCredentials: AccessCredentials): Observable<UserModel> {
+        return this.http
+            .post<ResponseUser> (`${this.url}/login`, accessCredentials)
+            .pipe(map(this.userMapper.mapFrom))
+    }
 
 }
 

@@ -14,7 +14,7 @@ export class WebSocketService {
   }
 
   private connect(): void {
-    this.socket = new WebSocket('ws://localhost:8081/ws');
+    this.socket = new WebSocket('ws://54.211.140.80/ws');
 
     this.socket.onopen = () => {
       console.log('Conectado al servidor');

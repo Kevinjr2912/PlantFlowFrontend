@@ -22,7 +22,7 @@ export class FormParcelFComponent {
   ) {}
 
   ngOnInit() {
-    // Obtener los valores necesarios del localStorage
+    
     const userId = localStorage.getItem('id_user');
     const cropId = localStorage.getItem('cropId');
     let deviceId = localStorage.getItem('deviceId');
@@ -31,13 +31,13 @@ export class FormParcelFComponent {
       this.parcel.Id_user = parseInt(userId, 10);
       this.parcel.Id_crop = parseInt(cropId, 10);
     } else {
-      console.error('❌ Datos incompletos en el localStorage.');
+      console.error(' Datos incompletos en el localStorage.');
     }
 
-    // Asignar el deviceId si no existe en localStorage
+    
     if (!deviceId) {
-      deviceId = 'DEV581'; // Valor predeterminado
-      localStorage.setItem('deviceId', deviceId); // Guardar el id_device en localStorage
+      deviceId = 'DEV581'; 
+      localStorage.setItem('deviceId', deviceId); 
     }
 
     this.parcel.Id_device = deviceId;
@@ -45,21 +45,21 @@ export class FormParcelFComponent {
   }
 
   onSubmit() {
-    console.log('📤 Enviando datos del formulario de parcela:', this.parcel);
+    console.log(' Enviando datos del formulario de parcela:', this.parcel);
 
-    // Llamar al servicio para registrar la parcela
+    
     this.parcelService.registerParcel(this.parcel).subscribe({
       next: (response) => {
-        console.log('✅ Parcela registrada:', response);
+        console.log(' Parcela registrada:', response);
         this.goToNextStep();
       },
       error: (err) => {
-        console.error('❌ Error al registrar parcela:', err);
+        console.error(' Error al registrar parcela:', err);
       }
     });
   }
 
   goToNextStep() {
-    this.router.navigate(['/']);  // Aquí puedes redirigir a otra página, como el dashboard o alguna vista final
+    this.router.navigate(['/']);  
   }
 }

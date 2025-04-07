@@ -47,11 +47,11 @@ throw new Error('Method not implemented.');
   onSubmit() {
     this.crop.id_crop_type = +this.crop.id_crop_type; 
     
-    console.log('📤 Enviando datos del formulario:', this.crop); 
+    console.log('Enviando datos del formulario:', this.crop); 
   
     this.cropService.registerCrop(this.crop).subscribe({
       next: (response) => {
-        console.log('✅ Cultivo registrado:', response);
+        console.log('Cultivo registrado:', response);
 
         
         localStorage.setItem('cropId', response.id.toString());
@@ -60,7 +60,7 @@ throw new Error('Method not implemented.');
         this.goToNextStep();
       },
       error: (err) => {
-        console.error('❌ Error al registrar cultivo:', err);
+        console.error('Error al registrar cultivo:', err);
       }
     });
   }

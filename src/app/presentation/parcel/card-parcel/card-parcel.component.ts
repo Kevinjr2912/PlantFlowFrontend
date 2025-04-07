@@ -15,7 +15,7 @@ export class CardParcelComponent {
   constructor(private parcelService: ParcelImplementationRepository, private router: Router) {}
 
   ngOnInit() {
-    const userId = 10; 
+    const userId = 1; 
     this.parcelService.getParcels(userId).subscribe({
       next: (data) => {
         console.log(" datos recibidos de la api:", data); 

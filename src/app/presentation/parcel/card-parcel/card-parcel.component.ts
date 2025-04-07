@@ -48,6 +48,6 @@ export class CardParcelComponent {
 
   verDetalleParcela(id: number) {
     console.log("Redirigiendo a detalle de parcela con ID:", id);
-    this.router.navigate(['crop/', id]); 
-  }
+    this.router.navigate(['crop/', id]);
+ }
 }

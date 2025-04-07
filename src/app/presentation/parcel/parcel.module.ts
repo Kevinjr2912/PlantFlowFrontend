@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParcelDataModule } from '../../data/parcel-data/parcel-data.module';
 import { CropDataModule } from '../../data/crop-data/crop-data.module';
 import { DeviceDataModule } from '../../data/device-data/device-data.module';
+import { FormParametersComponent } from './form-parameters/form-parameters.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { DeviceDataModule } from '../../data/device-data/device-data.module';
     ActionsParcelsComponent,
     CardParcelComponent,
     FormParcelComponent,
+    FormParametersComponent,
 
   ],
   imports: [

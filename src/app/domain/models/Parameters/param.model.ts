@@ -5,5 +5,5 @@ export interface CultivationParametersModel {
 	temp_min 		: number;
 	temp_max 		: number;
 	max_air_con  	: number;
-	min_air_con  	: number;
+	// min_air_con  	: number;
 }

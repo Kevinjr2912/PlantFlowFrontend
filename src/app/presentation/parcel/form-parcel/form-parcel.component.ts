@@ -146,7 +146,7 @@ export class FormParcelComponent {
         temp_min: this.formLost.value.minTemperature,
         temp_max: this.formLost.value.maxTemperature,
         max_air_con: this.formLost.value.maxAirQuality,
-        min_air_con: 0
+        // min_air_con: 0
       };
 
       const savedParams = await this.parameterService.registerParameters(params).toPromise();

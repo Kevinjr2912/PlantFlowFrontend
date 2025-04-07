@@ -13,7 +13,7 @@ export class ParameterGetByIdRepositoryMapper extends Mapper<ResponseCultivation
       temp_min: attributes.min_temp,
       temp_max: attributes.max_temp,
       max_air_con: attributes.max_air_con,
-      min_air_con: attributes.min_air_con,
+      // min_air_con: attributes.min_air_con,
     };
   }
 }

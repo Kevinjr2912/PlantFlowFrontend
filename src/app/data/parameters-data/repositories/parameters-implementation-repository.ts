@@ -7,6 +7,7 @@ import { CultivationParametersModel } from "../../../domain/models/Parameters/pa
 import { ResponseCultivationParameter } from "./entities/Parameters";
 import { ParameterGetByIdRepositoryMapper } from "./mappers/parameter-getById-repository-mapper";
 import { ParameterSetRepositoryMapper } from "./mappers/parameter-set-repository-mapper";
+import { ParameterRegisterRepositoryMapper } from "./mappers/parameters-register-repository-mapper";
 
 @Injectable({
   providedIn: "root",
@@ -16,14 +17,15 @@ export class ParameterImplementationRepository extends ParameterRepository {
     super();
   }
 
-  private url = "http://localhost:8080/params";
+  private url = "http://localhost:8080/params/";
 
   parameterGetByIdMapper = new ParameterGetByIdRepositoryMapper();
   parameterSetMapper = new ParameterSetRepositoryMapper();
+  parameterRegisterMapper = new ParameterRegisterRepositoryMapper();
 
   GetParametersById(id: number): Observable<CultivationParametersModel> {
     return this.http
-      .get<ResponseCultivationParameter>(`${this.url}/${id}`)
+      .get<ResponseCultivationParameter>(`${this.url}${id}`)
       .pipe(map(response => this.parameterGetByIdMapper.mapFrom(response)));
   }
 
@@ -38,16 +40,10 @@ export class ParameterImplementationRepository extends ParameterRepository {
   }
 
   registerParameters(cultivationParameters: CultivationParametersModel): Observable<CultivationParametersModel> {
-    return this.http.post<any>(this.url, cultivationParameters).pipe(
-      map((response) => ({
-        id: parseInt(response.data.id),
-        humidity_min: response.data.attributes.humidity_min,
-        humidity_max: response.data.attributes.humidity_max,
-        temp_min: response.data.attributes.temp_min,
-        temp_max: response.data.attributes.temp_max,
-        max_air_con: response.data.attributes.max_air_con,
-        min_air_con: response.data.attributes.min_air_con
-      }))
-    );
+    console.log(cultivationParameters);  
+    return this.http.post<ResponseCultivationParameter>(`${this.url}`, cultivationParameters)
+      .pipe(map(response => this.parameterRegisterMapper.mapFrom(response)));
   }
+  
+  
 }

@@ -6,6 +6,7 @@ import { FormParcelComponent } from './presentation/parcel/form-parcel/form-parc
 import { SettingsPageComponent } from './presentation/user/settings-page/settings-page.component';
 import { LoginComponent } from './presentation/auth/pages/login/login.component';
 import { RegisterComponent } from './presentation/auth/pages/register/register.component';
+import { FormParametersComponent } from './presentation/parcel/form-parameters/form-parameters.component';
 
 const routes: Routes = [
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"settings",component:SettingsPageComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path:'', redirectTo:'parcel', pathMatch: 'full'}
+  {path:'', redirectTo:'parcel', pathMatch: 'full'},
+  {path:"params",component:FormParametersComponent},
 
 ];
 

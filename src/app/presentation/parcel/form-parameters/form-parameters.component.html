@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="humidityMin">Humedad Mínima:</label>
+      <input type="number" id="humidityMin" [(ngModel)]="parameters.humidity_min" name="humidityMin" required>
+    </div>
+  
+    <div>
+      <label for="humidityMax">Humedad Máxima:</label>
+      <input type="number" id="humidityMax" [(ngModel)]="parameters.humidity_max" name="humidityMax" required>
+    </div>
+  
+    <div>
+      <label for="tempMin">Temperatura Mínima:</label>
+      <input type="number" id="tempMin" [(ngModel)]="parameters.temp_min" name="tempMin" required>
+    </div>
+  
+    <div>
+      <label for="tempMax">Temperatura Máxima:</label>
+      <input type="number" id="tempMax" [(ngModel)]="parameters.temp_max" name="tempMax" required>
+    </div>
+  
+    <div>
+      <label for="maxAirCon">Calidad Máxima del Aire:</label>
+      <input type="number" id="maxAirCon" [(ngModel)]="parameters.max_air_con" name="maxAirCon" required>
+    </div>
+  
+    <button type="submit">Guardar Parámetros</button>
+  </form>
+  

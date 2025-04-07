@@ -35,7 +35,7 @@ import { MeasurementModule } from '../../data/measurement/measurement.module';
 
     ChartModule,
 
-    ParametersDataModule
+    ParametersDataModule,
 
 
     ChartModule,

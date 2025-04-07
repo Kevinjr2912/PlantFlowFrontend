@@ -29,6 +29,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     AuthModule,
     NavBarComponent,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts') }),
+    AuthModule,
 ],
   providers: [],
   bootstrap: [AppComponent]

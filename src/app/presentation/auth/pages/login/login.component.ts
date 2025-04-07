@@ -51,6 +51,8 @@ export class LoginComponent {
 
           localStorage.setItem('token', password);
 
+          localStorage.setItem('id_user', (data.id).toString())
+
           this.router.navigate(['/parcel']);
         },
         error: (err) => console.log("Error:", err)

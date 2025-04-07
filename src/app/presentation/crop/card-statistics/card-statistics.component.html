@@ -4,7 +4,7 @@
     <div class="stat-card graph-card p-6 rounded-lg flex flex-col items-center">
       <h2 class="text-lg font-bold">TEMPERATURA</h2>
       <img src="/assets/crops/temperature.svg" alt="Temperatura" class="w-20 h-20 mt-3">
-      <p class="text-3xl font-semibold mt-3">{{ ultima.temp }}°C</p>
+      <p class="text-3xl font-semibold mt-3">{{ temp }}°C</p>
       <div class="w-full bg-gray-700 h-2 mt-2 rounded">
         <div class="bg-white h-2 rounded" [style.width.%]="(ultima.temp || 0) * 2"></div>
       </div>
@@ -19,7 +19,7 @@
     <div class="stat-card graph-card p-6 rounded-lg flex flex-col items-center">
       <h2 class="text-lg font-bold">HUMEDAD</h2>
       <img src="/assets/crops/humedad.svg" alt="Humedad" class="w-20 h-20 mt-3">
-      <p class="text-3xl font-semibold mt-3">{{ ultima.humedity }}%</p>
+      <p class="text-3xl font-semibold mt-3">{{ humidity }}%</p>
       <div class="w-full bg-gray-700 h-2 mt-2 rounded">
         <div class="bg-white h-2 rounded" [style.width.%]="(ultima.humedity || 0)"></div>
       </div>
@@ -37,7 +37,7 @@
       <h2 class="text-lg font-bold">CALIDAD DE AIRE</h2>
       <img src="/assets/crops/aire.svg" alt="Calidad del aire" class="w-20 h-20 mt-3">
       <p class="text-lg font-semibold mt-3">
-        CALIDAD: {{ ultima.air > 250 ? 'Mala' : ultima.air > 150 ? 'Moderada' : 'Buena' }}
+        CALIDAD: {{ air > 900 ? 'Mala' : ultima.air > 0 ? 'Moderada' : 'Buena' }}
       </p>
       <div class="flex space-x-2 mt-3">
         <img *ngIf="ultima.air <= 150" src="/assets/crops/aire1.svg" class="w-16 h-16">
@@ -55,7 +55,7 @@
     <div class="stat-card graph-card p-6 rounded-lg flex flex-col items-center">
       <h2 class="text-lg font-bold">RADIACIÓN SOLAR</h2>
       <img src="/assets/crops/radiacion.svg" alt="Radiación solar" class="w-20 h-20 mt-3">
-      <p class="text-3xl font-semibold mt-3">{{ ultima.sun }} Wats</p>
+      <p class="text-3xl font-semibold mt-3">{{ light }} Luxes</p>
       <!-- Gráfica luz solar -->
       <div class="graph-card p-6 rounded-lg flex flex-col items-center mt-4 w-full">
         <h2 class="text-lg font-bold">GRÁFICA LUZ SOLAR</h2>

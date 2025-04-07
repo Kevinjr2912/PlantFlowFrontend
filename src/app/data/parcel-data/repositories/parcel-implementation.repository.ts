@@ -26,7 +26,7 @@ export class ParcelImplementationRepository extends ParcelRepository {
 //   parcelMapperGetParcels = new GetParcelsImplmentationRepossitoryMapper();
 
 
-  private url = "http://localhost:8080/parcels";
+  private url = "http://54.156.75.55/parcels";
   
 
   registerParcel(parcel: ParcelModel): Observable<ParcelModel> {

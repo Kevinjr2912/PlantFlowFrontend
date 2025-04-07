@@ -11,7 +11,7 @@ import { DeviceGetByIdRepositoryMapper } from "./mappers/device-getById-reposito
   providedIn: "root",
 })
 export class DeviceImplementationRepository extends DeviceRepository {
-  private url = "http://localhost:8080/devices";
+  private url = "http://54.156.75.55/devices";
 
   constructor(private http: HttpClient) {
     super();

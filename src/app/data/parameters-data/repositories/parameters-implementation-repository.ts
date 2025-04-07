@@ -17,7 +17,7 @@ export class ParameterImplementationRepository extends ParameterRepository {
     super();
   }
 
-  private url = "http://localhost:8080/params/";
+  private url = "http://54.156.75.55/params/";
 
   parameterGetByIdMapper = new ParameterGetByIdRepositoryMapper();
   parameterSetMapper = new ParameterSetRepositoryMapper();

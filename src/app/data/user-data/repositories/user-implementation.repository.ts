@@ -19,7 +19,7 @@ export class UserImplementationRepository extends UserRepository {
     userMapper = new UserImplementationRepositoryMapper();
 
     // Definimos la ruta al recurso student
-    private url = "http://localhost:8080/users"
+    private url = "http://54.156.75.55/users"
     
     createUser(user : UserModel): Observable<UserModel> {
         return this.http.post<ResponseUser> (`${this.url}/`, user)

@@ -11,7 +11,7 @@ import { ResponseMeasurement, ResponseMeasurements } from "./models/measurement"
     providedIn: "root"
 })
 export class MeasurementImplementationRepository extends MeasurementRepository {
-    private url = "http://localhost:8080/measurements/"
+    private url = "http://54.156.75.55/measurements/"
 
     constructor(private http: HttpClient){
         super();

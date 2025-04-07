@@ -14,7 +14,7 @@ import { CropRepositoryMapper } from "./mappers/crop-getById-repository-mapper";
 export class CropImplementationRepository extends CropRepository {
 
 
-    private url = "http://localhost:8080/crops";
+    private url = "http://54.156.75.55/crops";
 
     constructor (private http: HttpClient){
         super()

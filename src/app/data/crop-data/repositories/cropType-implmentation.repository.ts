@@ -11,7 +11,7 @@ import { CropTypeRepositoryMapper } from "./mappers/cropType-getAll-repository-m
   providedIn: "root",
 })
 export class CropTypeImplementationRepository extends CropTypeRepository {
-  private url = "http://localhost:8080/crop_type";
+  private url = "http://54.156.75.55/crop_type";
 
   constructor(private http: HttpClient) {
     super();

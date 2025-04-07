@@ -3,7 +3,7 @@
     class="mycrop-card w-1/2 flex flex-col items-center p-12 gap-14 box-card-crop"
   >
     <div class="mycrop-card-title box-title-crop">
-      <p>CULTIVO</p>
+      <p class="crop-name">{{ cropType?.crop_type_name  || 'Cargando...' }}</p>
     </div>
     <div class="mycrop-icon box-icon-crop">
       <img src="assets/crops/CropIcon.svg" alt="cargando..." />
@@ -52,13 +52,15 @@
         <div class="box-son-instalation">
           <p>Fecha de instalación:</p>
         </div>
-        <div class="box-value-instalation">{{ device?.Installation_date| date:'yyyy-MM-dd HH:mm:ss' }}</div>
+        <div class="box-value-instalation">
+          4/4/2024
+        </div>
       </div>
       <div class="box-maintenance">
         <div class="box-son-maintenance">
           <p>Fecha de mantenimiento:</p>
         </div>
-        {{ device?.Maintenance_date ? (device?.Maintenance_date | date:'yyyy-MM-dd HH:mm:ss') : 'No disponible' }}
+       Sin mantenimiento
       </div>
       <button
         class="btn-device mt-6 bg-blue-500 hover:bg-blue-700 font-bold p-6"

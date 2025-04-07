@@ -6,6 +6,7 @@ import { UserRepository } from "../../repositories/User/user.repository";
 export class CreateUserUseCase implements UseCase<UserModel, UserModel> {
     constructor(private userRepository: UserRepository) { }
     execute(user: UserModel): Observable<UserModel> {
+        console.log(user)
         return this.userRepository.createUser(user);
     }
 }

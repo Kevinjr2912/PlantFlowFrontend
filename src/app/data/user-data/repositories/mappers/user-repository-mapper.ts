@@ -9,6 +9,7 @@ export class UserImplementationRepositoryMapper extends Mapper<
   mapFrom(res: ResponseUser): UserModel {
     return {
       id: parseInt(res.data.id),
+      id_rol: res.data.attributes.id_rol,
       firstName: res.data.attributes.firstName,
       lastName: res.data.attributes.lastName,
       email: res.data.attributes.email,

@@ -1,4 +1,5 @@
 interface AttributesUser {
+    id_rol: number;
     firstName: string;
     lastName: string;
     email: string;

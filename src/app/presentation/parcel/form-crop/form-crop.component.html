@@ -1,0 +1,61 @@
+<div class="container-add-parcel">
+  <form
+    (ngSubmit)="onSubmit()"
+    class="mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+  >
+    <div class="form-step1">
+      <h1 class="text-center text-2xl mb-6 font-bold text-white sm:text-3xl">
+        DATOS DEL CULTIVO
+      </h1>
+
+      <div class="form-group mt-3">
+        <label for="cropName" class="text-white">Nombre del Cultivo:</label>
+        <input
+          type="text"
+          id="cropName"
+          [(ngModel)]="crop.crop_name"
+          name="cropName"
+          required
+          class="input-field w-full"
+        />
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="cropType" class="text-white">Tipo de Cultivo:</label>
+        <select
+          id="cropType"
+          [(ngModel)]="crop.id_crop_type"
+          name="cropType"
+          required
+          class="input-field w-full"
+        >
+          <option value="" disabled selected>Seleccione un tipo</option>
+          <option *ngFor="let cropType of cropTypes" [value]="cropType.id">
+            {{ cropType.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="cultivationParameter" class="text-white"
+          >Parámetro de Cultivo:</label
+        >
+        <input
+          type="text"
+          id="cultivationParameter"
+          [(ngModel)]="crop.id_cultivation_parameter"
+          name="cultivationParameter"
+          readonly
+          class="input-field w-full"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="div-submit_color button_submit block w-full rounded-lg px-5 py-3 text-sm font-medium text-white mt-6"
+      >
+        Registrar Cultivo
+      </button>
+    </div>
+  </form>
+</div>

@@ -15,11 +15,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <img src="/assets/Aside/out.svg" alt="" class="w-10 h-10" />
-                            <span class="ms-3">Cerrar sesión</span>
+                        <a (click)="cerrarSesion()" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer">
+                          <img src="/assets/Aside/out.svg" alt="" class="w-10 h-10" />
+                          <span class="ms-3">Cerrar sesión</span>
                         </a>
-                    </li>
+                      </li>
+                      
                 </ul>
             </li>
             <li>
@@ -30,12 +31,12 @@
                 </a>
                 <ul *ngIf="showParcels" class="pl-6 space-y-2">
                     <li *ngFor="let parcel of parcels">
-                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <img src="/assets/Aside/parcel-mini.svg" alt="" class="w-10 h-10" />
-                            <span class="ms-3">{{ parcel.name }}</span>
-                        </a>
+                      <a (click)="navigateToParcel(parcel.id)" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <img src="/assets/Aside/parcel-mini.svg" alt="" class="w-10 h-10" />
+                        <span class="ms-3">{{ parcel.name }}</span>
+                      </a>
                     </li>
-                </ul>
+                  </ul>
             </li>
             <li>
                 <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">

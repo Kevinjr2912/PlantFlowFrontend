@@ -31,9 +31,17 @@ import { MeasurementModule } from '../../data/measurement/measurement.module';
     FormsModule,
     DeviceDataModule,
     CropDataModule,
+
+
+    ChartModule,
+
+    ParametersDataModule,
+
+
     ChartModule,
     ParametersDataModule,
     MeasurementModule
+
   ]
 })
 export class CropModule { }

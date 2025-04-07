@@ -2,7 +2,7 @@ import { Mapper } from "../../../../base/mapper";
 import { CultivationParametersModel } from "../../../../domain/models/Parameters/param.model";
 import { ResponseCultivationParameter } from "../entities/Parameters";
 
-export class ParameterSetRepositoryMapper extends Mapper<ResponseCultivationParameter, CultivationParametersModel> {
+export class ParameterRegisterRepositoryMapper extends Mapper<ResponseCultivationParameter, CultivationParametersModel> {
   mapFrom(response: ResponseCultivationParameter): CultivationParametersModel {
     const attributes = response.data.attributes;
 

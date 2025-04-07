@@ -7,6 +7,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FormParcelComponent } from './form-parcel/form-parcel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParcelDataModule } from '../../data/parcel-data/parcel-data.module';
+import { CropDataModule } from '../../data/crop-data/crop-data.module';
+import { DeviceDataModule } from '../../data/device-data/device-data.module';
+import { FormParametersComponent } from './form-parameters/form-parameters.component';
+import { FormCropComponent } from './form-crop/form-crop.component';
+import { FormParcelFComponent } from './form-parcel-f/form-parcel-f.component';
 
 
 @NgModule({
@@ -15,6 +20,9 @@ import { ParcelDataModule } from '../../data/parcel-data/parcel-data.module';
     ActionsParcelsComponent,
     CardParcelComponent,
     FormParcelComponent,
+    FormParametersComponent,
+    FormCropComponent,
+    FormParcelFComponent,
 
   ],
   imports: [
@@ -23,7 +31,10 @@ import { ParcelDataModule } from '../../data/parcel-data/parcel-data.module';
     RouterLinkActive,
     ReactiveFormsModule,
     FormsModule,
-    ParcelDataModule
+    ParcelDataModule,
+    ParcelDataModule,
+    CropDataModule,
+    DeviceDataModule
   ],
   exports: [
     ParcelPageComponent

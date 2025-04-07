@@ -31,11 +31,14 @@ export class ParcelImplementationRepository extends ParcelRepository {
 
   registerParcel(parcel: ParcelModel): Observable<ParcelModel> {
     return this.http
-      .post<ResponseParcels>(this.url, parcel)
+      .post<ResponseParcels>(`${this.url}/`, parcel)
       .pipe(
-        map(response => this.parcelMapper.mapFrom(response)[0]) 
+        map(response => {
+          console.log("Respuesta del servidor:", response); 
+          return this.parcelMapper.mapFrom(response)[0]; 
+        })
       );
-}
+  }
 
   getParcels(id_user: number): Observable<ParcelMinInfo[]> {
     return this.http

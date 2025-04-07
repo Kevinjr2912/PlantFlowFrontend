@@ -10,6 +10,8 @@ import { ParcelDataModule } from '../../data/parcel-data/parcel-data.module';
 import { CropDataModule } from '../../data/crop-data/crop-data.module';
 import { DeviceDataModule } from '../../data/device-data/device-data.module';
 import { FormParametersComponent } from './form-parameters/form-parameters.component';
+import { FormCropComponent } from './form-crop/form-crop.component';
+import { FormParcelFComponent } from './form-parcel-f/form-parcel-f.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { FormParametersComponent } from './form-parameters/form-parameters.compo
     CardParcelComponent,
     FormParcelComponent,
     FormParametersComponent,
+    FormCropComponent,
+    FormParcelFComponent,
 
   ],
   imports: [

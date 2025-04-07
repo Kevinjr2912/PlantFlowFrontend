@@ -1,0 +1,60 @@
+
+<div class="container-add-parcel">
+  <form (ngSubmit)="onSubmit()" class="">
+
+    <h1 class="text-center text-2xl mb-6 font-bold text-white sm:text-3xl">
+      DATOS DEL CULTIVO <br> <br>
+      ACEPTAR DATOS 
+    </h1>
+
+    <!-- Input para el id del usuario -->
+    <div>
+      <label for="id_user" class="block text-sm font-medium text-gray-700">ID del Usuario</label>
+      <input
+        type="number"
+        id="id_user"
+        [(ngModel)]="parcel.Id_user"
+        name="id_user"
+        class="mt-1 p-2 border border-gray-300 rounded-lg w-full"
+        [readonly]="true"
+      />
+    </div>
+
+    <!-- Input para el id del cultivo -->
+    <div>
+      <label for="id_crop" class="block text-sm font-medium text-gray-700">ID del Cultivo</label>
+      <input
+        type="number"
+        id="id_crop"
+        [(ngModel)]="parcel.Id_crop"
+        name="id_crop"
+        class="mt-1 p-2 border border-gray-300 rounded-lg w-full"
+        [readonly]="true"
+      />
+    </div>
+
+    <!-- Input para el id del dispositivo -->
+    <div>
+      <label for="id_device" class="block text-sm font-medium text-gray-700">ID del Dispositivo</label>
+      <input
+        type="text"
+        id="id_device"
+        [(ngModel)]="parcel.Id_device"
+        name="id_device"
+        class="mt-1 p-2 border border-gray-300 rounded-lg w-full"
+        [readonly]="true"
+      />
+    </div>
+
+    <!-- Botón de enviar -->
+    <div>
+      <button
+        type="submit"
+        class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200"
+      >
+        Registrar Parcela
+      </button>
+    </div>
+
+  </form>
+</div>

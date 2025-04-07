@@ -1,29 +1,112 @@
-<form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="humidityMin">Humedad Mínima:</label>
-      <input type="number" id="humidityMin" [(ngModel)]="parameters.humidity_min" name="humidityMin" required>
-    </div>
+<div class="container-add-parcel">
+    <form
+      [formGroup]="parametersForm"
+      (ngSubmit)="onSubmit()"
+      class="mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+    >
+      <div class="form-step1">
+        <h1 class="text-center text-2xl mb-6 font-bold text-white sm:text-3xl">
+          DATOS DEL CULTIVO <br> <br>
+          PARÁMETROS 
+        </h1>
   
-    <div>
-      <label for="humidityMax">Humedad Máxima:</label>
-      <input type="number" id="humidityMax" [(ngModel)]="parameters.humidity_max" name="humidityMax" required>
-    </div>
+        <div class="param-group mt-3">
+          <div class="param-left">
+            <label for="humidityMin" class="text-white">Humedad Mínima:</label>
+            <input
+              type="number"
+              id="humidityMin"
+              formControlName="humidity_min"
+              required
+              class="input-field"
+            />
+            <div
+              *ngIf="hasErrors('humidity_min', 'required')"
+              class="text-red-500 text-xs mb-2"
+            >
+              El campo es obligatorio
+            </div>
+          </div>
+          <div class="param-right">
+            <label for="humidityMax" class="text-white">Humedad Máxima:</label>
+            <input
+              type="number"
+              id="humidityMax"
+              formControlName="humidity_max"
+              required
+              class="input-field"
+            />
+            <div
+              *ngIf="hasErrors('humidity_max', 'required')"
+              class="text-red-500 text-xs mb-2"
+            >
+              El campo es obligatorio
+            </div>
+          </div>
+        </div>
   
-    <div>
-      <label for="tempMin">Temperatura Mínima:</label>
-      <input type="number" id="tempMin" [(ngModel)]="parameters.temp_min" name="tempMin" required>
-    </div>
+        <div class="param-group mt-3">
+            <div class="param-left">
+                <label for="tempMin" class="text-white">Temperatura Mínima:</label>
+                <input
+                  type="number"
+                  id="tempMin"
+                  formControlName="temp_min"
+                  required
+                  class="input-field"
+                />
+                <div
+                  *ngIf="hasErrors('temp_min', 'required')"
+                  class="text-red-500 text-xs mb-2"
+                >
+                  El campo es obligatorio
+                </div>
+            </div>
+
+            <div class="param-right">
+                <label for="tempMax" class="text-white">Temperatura Máxima:</label>
+                <input
+                  type="number"
+                  id="tempMax"
+                  formControlName="temp_max"
+                  required
+                  class="input-field"
+                />
+                <div
+                  *ngIf="hasErrors('temp_max', 'required')"
+                  class="text-red-500 text-xs mb-2"
+                >
+                  El campo es obligatorio
+                </div>
+            </div>
+
+        </div>
+   
   
-    <div>
-      <label for="tempMax">Temperatura Máxima:</label>
-      <input type="number" id="tempMax" [(ngModel)]="parameters.temp_max" name="tempMax" required>
-    </div>
+        <div class="mt-3">
+          <label for="maxAirCon" class="text-white">Calidad de aire Máxima:</label>
+          <input
+            type="number"
+            id="maxAirCon"
+            formControlName="max_air_con"
+            required
+            class="input-field"
+          />
+          <div
+            *ngIf="hasErrors('max_air_con', 'required')"
+            class="text-red-500 text-xs mb-2"
+          >
+            El campo es obligatorio
+          </div>
+        </div>
   
-    <div>
-      <label for="maxAirCon">Calidad Máxima del Aire:</label>
-      <input type="number" id="maxAirCon" [(ngModel)]="parameters.max_air_con" name="maxAirCon" required>
-    </div>
-  
-    <button type="submit">Guardar Parámetros</button>
-  </form>
+        <button
+          type="submit"
+          class="div-submit_color button_submit block w-full rounded-lg px-5 py-3 text-sm font-medium text-white mb-4"
+        >
+          Guardar Parámetros
+        </button>
+      </div>
+    </form>
+  </div>
   

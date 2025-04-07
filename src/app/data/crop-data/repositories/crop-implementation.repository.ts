@@ -30,7 +30,7 @@ export class CropImplementationRepository extends CropRepository {
       }
 
       registerCrop(crop: CropModel): Observable<CropModel> {
-        return this.http.post<any>(`${this.url}`, crop).pipe(
+        return this.http.post<any>(`${this.url}/`, crop).pipe(
           map((response) => {
             return {
               id: parseInt(response.data.id),
